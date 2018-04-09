@@ -1,14 +1,18 @@
 from bs4 import BeautifulSoup
 import requests
 
+//urls yet to visit
 queue=["https://ehealthforum.com"]
+
+//list of all the visited urls
 seen=[]
 
 count=1;
+domain="ehealthforum.com"
 while queue:
     url=queue.pop(0)
     if url:
-        if url in seen or 'ehealthforum.com' not in url or 'javascript:' in url:
+        if url in seen or domain not in url or 'javascript:' in url:
             continue
 
         seen.append(url)
